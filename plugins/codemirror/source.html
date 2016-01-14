@@ -33,7 +33,7 @@ function inArray(key, arr)
 	editor = tinymce.activeEditor;
 	var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : null;
 	CMsettings = {
-		path: userSettings.path || 'CodeMirror',
+		path: userSettings.path || 'codemirror-4.8',
 		indentOnInit: userSettings.indentOnInit || false,
 		config: {// Default config
 			mode: 'htmlmixed',
