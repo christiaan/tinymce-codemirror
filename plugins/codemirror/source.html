@@ -31,9 +31,9 @@ function inArray(key, arr)
 
 	tinymce = parent.tinymce;
 	editor = tinymce.activeEditor;
-	var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : null;
+	var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : {};
 	CMsettings = {
-		path: userSettings.path || 'CodeMirror',
+		path: userSettings.path || 'codemirror-4.8',
 		indentOnInit: userSettings.indentOnInit || false,
 		config: {// Default config
 			mode: 'htmlmixed',
