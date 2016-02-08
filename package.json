@@ -1,0 +1,20 @@
+{
+  "name": "tinymce-codemirror",
+  "version": "1.0.0",
+  "description": "CodeMirror for TinyMCE 4",
+  "main": "plugins/plugin.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiaan/tinymce-codemirror.git"
+  },
+  "keywords": [
+    "tinymce",
+    "codemirror"
+  ],
+  "author": "Arjan Haverkamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christiaan/tinymce-codemirror/issues"
+  },
+  "homepage": "https://github.com/christiaan/tinymce-codemirror#readme"
+}
