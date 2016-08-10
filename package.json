@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/christiaan/tinymce-codemirror.git"
   },
+  "scripts" : {
+    "prepublish": "./node_modules/.bin/uglifyjs plugins/codemirror/plugin.js -o plugins/codemirror/plugin.min.js -m"
+  },
   "keywords": [
     "tinymce",
     "codemirror"
@@ -16,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/christiaan/tinymce-codemirror/issues"
   },
-  "homepage": "https://github.com/christiaan/tinymce-codemirror#readme"
+  "homepage": "https://github.com/christiaan/tinymce-codemirror#readme",
+  "devDependencies": {
+    "uglify-js": "^2.7.0"
+  }
 }
