@@ -62,11 +62,16 @@ function inArray(key, arr)
 		]
 	};
 
+	if (userSettings.fullscreen) {
+		CMsettings.jsFiles.push('addon/display/fullscreen.js');
+		CMsettings.cssFiles.push('addon/display/fullscreen.css');
+	}
+
 	// Merge config
 	for (i in userSettings.config) {
 		CMsettings.config[i] = userSettings.config[i];
 	}
-	
+
 	// Merge jsFiles
 	for (i in userSettings.jsFiles) {
 		if (!inArray(userSettings.jsFiles[i], CMsettings.jsFiles)) {
@@ -96,6 +101,10 @@ function inArray(key, arr)
 		document.write('<scr'+'ipt type="text/javascript" src="' + CMsettings.path + CMsettings.jsFiles[i] + '"></scr'+'ipt>');
 	}
 
+	// Borrowed from codemirror.js themeChanged function. Sets the theme's class names to the html element.
+	// Without this, the background color outside of the codemirror wrapper element remains white.
+	document.documentElement.className += CMsettings.config.theme.replace(/(^|\s)\s*/g, " cm-s-");
+
 	window.onload = start;
 }());
 
@@ -124,7 +133,7 @@ function start()
 	html = html.replace(/<span\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
 	editor.dom.remove(editor.dom.select('.CmCaReT'));
 
-	CodeMirror.defineInitHook(function(inst) 
+	CodeMirror.defineInitHook(function(inst)
 	{
 		// Move cursor to correct position:
 		inst.focus();
@@ -133,7 +142,7 @@ function start()
 			inst.setCursor(cursor.to());
 			cursor.replace('');
 		}
-		
+
 		// Indent all code, if so requested:
 		if (editor.settings.codemirror.indentOnInit) {
 			var last = inst.lineCount();
@@ -173,7 +182,7 @@ function findDepth(haystack, needle)
 function submit()
 {
 	"use strict";
-		
+
 	var cc = '&#x0;', isDirty = codemirror.isDirty, doc = codemirror.doc;
 
 	if (doc.somethingSelected()) {
