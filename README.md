@@ -114,6 +114,12 @@ including Firefox, Google Chrome, Safari and Internet Explorer, version 8 or
 better. It is NOT compatible with Interner Explorer 6 or 7, simply because
 CodeMirror itself does not work in these versions.
 
+Contributing
+------------
+When making changes to `plugins/codemirror/plugin.js`, be sure to run
+`npm run prepublish` before committing. The `prepublish` script will generate
+the `plugins/codemirror/plugin.min.js` file.
+
 Changelog
 ---------
 
