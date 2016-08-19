@@ -103,7 +103,8 @@ function inArray(key, arr)
 
 	// Borrowed from codemirror.js themeChanged function. Sets the theme's class names to the html element.
 	// Without this, the background color outside of the codemirror wrapper element remains white.
-	document.documentElement.className += CMsettings.config.theme.replace(/(^|\s)\s*/g, " cm-s-");
+    // [TMP] commented temporary, cause JS error: Uncaught TypeError: Cannot read property 'replace' of undefined
+//	document.documentElement.className += CMsettings.config.theme.replace(/(^|\s)\s*/g, " cm-s-");
 
 	window.onload = start;
 }());
@@ -129,7 +130,10 @@ function start()
 
 	// Set CodeMirror cursor and bookmark to same position as cursor was in TinyMCE:
 	var html = editor.getContent({source_view: true});
-	editor.selection.getBookmark();
+
+    // [FIX] #6 z-index issue with table panel and source code dialog
+    //	editor.selection.getBookmark();
+    
 	html = html.replace(/<span\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
 	editor.dom.remove(editor.dom.select('.CmCaReT'));
     
