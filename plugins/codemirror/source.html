@@ -177,10 +177,11 @@ function findDepth(haystack, needle)
 	"use strict";
 
 	var idx = haystack.indexOf(needle), depth = 0, x;
-	for (x = idx; x >= 0; x--) {
+	for (x = idx -1; x >= 0; x--) {
 		switch(haystack.charAt(x)) {
 			case '<': depth--; break;
 			case '>': depth++; break;
+			case '&': depth++; break;
 		}
 	}
 	return depth;
@@ -211,7 +212,18 @@ function submit()
 	}
 
 	// Submit HTML to TinyMCE:
+    // [FIX] Cursor position inside JS, style or &nbps;
+    // Workaround to fix cursor position if inside script tag
+    var code = codemirror.getValue();
+    if(code.search(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi) !== -1)
+    {
+    	editor.setContent(codemirror.getValue().replace(cc, ''));
+    }
+    else
+    {
 	editor.setContent(codemirror.getValue().replace(cc, '<span id="CmCaReT"></span>'));
+    }
+    
 	editor.isNotDirty = !isDirty;
 	if (isDirty) {
 		editor.nodeChanged();
