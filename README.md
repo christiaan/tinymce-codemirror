@@ -51,6 +51,10 @@ the editor opens. This might be slow for large documents.
 **fullscreen** boolean (false) Whether to load the tinymce plugin and codemirror
 in full screen mode.
 
+**width** int (800) Codemirror window width
+
+**height** int (550) Codemirror window height
+
 **path**: string (codemirror) You might already have CodeMirror hosted elsewhere
 (outside TinyMCE). In that case, you can reuse that CodeMirror instance, by
 overriding the default path. For example:
