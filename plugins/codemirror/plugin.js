@@ -18,11 +18,21 @@ tinymce.PluginManager.add('codemirror', function(editor, url) {
 		editor.selection.collapse(true);
 		editor.selection.setContent('<span class="CmCaReT" style="display:none">&#0;</span>');
 
+        codemirrorWidth = 800;
+        if (editor.settings.codemirror.width) {
+            codemirrorWidth = editor.settings.codemirror.width;
+        }
+
+        codemirrorHeight = 550;
+        if (editor.settings.codemirror.width) {
+            codemirrorHeight = editor.settings.codemirror.height;
+        }
+        
 		var config = {
 			title: 'HTML source code',
 			url: url + '/source.html',
-			width: 800,
-			height: 550,
+			width: codemirrorWidth,
+			height: codemirrorHeight,
 			resizable : true,
 			maximizable : true,
 			fullScreen: editor.settings.codemirror.fullscreen,
