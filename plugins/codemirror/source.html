@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		.cm-trailingspace {
-			 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUXCToH00Y1UgAAACFJREFUCNdjPMDBUc/AwNDAAAFMTAwMDA0OP34wQgX/AQBYgwYEx4f9lQAAAABJRU5ErkJggg==);
-			 background-position: bottom left;
-			 background-repeat: repeat-x;
-		}
-	</style>
 <script>
 
 /**
@@ -145,7 +138,7 @@ function start()
     // [FIX] #6 z-index issue with table panel and source code dialog
     //	editor.selection.getBookmark();
     
-	html = html.replace(/<span\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
+	html = html.replace(/<span\s+style="display: none;"\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
 	editor.dom.remove(editor.dom.select('.CmCaReT'));
     
     // Hide TinyMCE toolbar panels, [FIX] #6 z-index issue with table panel and source code dialog
@@ -251,7 +244,6 @@ function submit()
 
 </script>
 <style type="text/css">
-
 body {
 	margin: 0;
 }
@@ -266,6 +258,11 @@ body {
 	background: #e8f2ff !important;
 }
 
+.cm-trailingspace {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUXCToH00Y1UgAAACFJREFUCNdjPMDBUc/AwNDAAAFMTAwMDA0OP34wQgX/AQBYgwYEx4f9lQAAAABJRU5ErkJggg==);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
 </style>
 </head>
 <body></body>
