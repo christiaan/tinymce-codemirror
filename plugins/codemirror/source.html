@@ -145,7 +145,7 @@ function start()
     // [FIX] #6 z-index issue with table panel and source code dialog
     //	editor.selection.getBookmark();
     
-	html = html.replace(/<span\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
+	html = html.replace(/<span\s+style="display: none;"\s+class="CmCaReT"([^>]*)>([^<]*)<\/span>/gm, String.fromCharCode(chr));
 	editor.dom.remove(editor.dom.select('.CmCaReT'));
     
     // Hide TinyMCE toolbar panels, [FIX] #6 z-index issue with table panel and source code dialog
