@@ -147,7 +147,7 @@ Version 1.5 - 2016-09-14
 
 Version 1.4 - 2014-12-15
 - Bugfix: Replace setLine call to replaceRange (for CodeMirror 4)
-  This fixed &#x0; appearing in the source code.
+  This fixed `&#x0;` appearing in the source code.
 - Note: This plugin requires CodeMirror version 4 (3 is no longer supported)
 
 Version 1.3 - 2014-03-04
@@ -170,4 +170,5 @@ Contributors
 ------------
 
 Arjan Haverkamp <arjan@avoid.org> - original author
+
 Contributors details, check on GitHub: https://github.com/christiaan/tinymce-codemirror/graphs/contributors
