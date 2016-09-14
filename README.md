@@ -51,9 +51,9 @@ the editor opens. This might be slow for large documents.
 **fullscreen** boolean (false) Whether to load the tinymce plugin and codemirror
 in full screen mode.
 
-**width** int (800) Codemirror window width
+**width**: int (800) Codemirror window width
 
-**height** int (550) Codemirror window height
+**height**: int (550) Codemirror window height
 
 **path**: string (codemirror) You might already have CodeMirror hosted elsewhere
 (outside TinyMCE). In that case, you can reuse that CodeMirror instance, by
@@ -100,11 +100,14 @@ tinymce.init({
   toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
   codemirror: {
     indentOnInit: true, // Whether or not to indent code on init.
+    fullscreen: true,   // Default setting is false
     path: 'CodeMirror', // Path to CodeMirror distribution
     config: {           // CodeMirror config object
        mode: 'application/x-httpd-php',
        lineNumbers: false
     },
+    width: 800,         // Default value is 800
+    height: 600,        // Default value is 550
     jsFiles: [          // Additional JS files to load
        'mode/clike/clike.js',
        'mode/php/php.js'
@@ -127,8 +130,20 @@ When making changes to `plugins/codemirror/plugin.js`, be sure to run
 `npm run prepublish` before committing. The `prepublish` script will generate
 the `plugins/codemirror/plugin.min.js` file.
 
+To run `npm run prepublish` you need uglify-js. Run following command inside your codemirror folder to get the needed files:
+`sudo npm install uglify-js`
+
+This will generate the subfolder `node_modules` inside codemirror.
+
 Changelog
 ---------
+
+Version 1.5 - 2016-09-14
+- Bugfix: Cursor position inside JS, style or &nbps; #2
+- Bugfix: z-index issue with table panel and source code dialog #6
+- Add: Added CSS and set default CM theme
+- Add: Better defaults, per codeMirror
+- Add: codemirror config window width and height
 
 Version 1.4 - 2014-12-15
 - Bugfix: Replace setLine call to replaceRange (for CodeMirror 4)
@@ -155,3 +170,4 @@ Contributors
 ------------
 
 Arjan Haverkamp <arjan@avoid.org> - original author
+Contributors details, check on GitHub: https://github.com/christiaan/tinymce-codemirror/graphs/contributors
