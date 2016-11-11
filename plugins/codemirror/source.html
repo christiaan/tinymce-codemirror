@@ -220,7 +220,7 @@ function submit()
     // [FIX] Cursor position inside JS, style or &nbps;
     // Workaround to fix cursor position if inside script tag
     var code = codemirror.getValue();
-    if(code.search(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi) !== -1)
+    if(code.search(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi) !== -1 || code.search(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi) !== -1)
     {
     	editor.setContent(codemirror.getValue().replace(cc, ''));
     }
