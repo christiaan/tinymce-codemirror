@@ -17,6 +17,18 @@ This plugin offers the following functionality:
  [TinyMCE]: http://www.tinymce.com/
  [CodeMirror]: http://codemirror.net/
 
+Requirements
+------------
+
+If you already have codemirror used in your project, you can configure the codemirror path in your configuration, see bellow.
+If you don't have codemirror, you need to add it as submodule like this:
+
+1. cd into your tiny_mce directory, which contains folders like: classes, langs, plugins, skins ans themes
+2. open terminal and run: git submodule add https://github.com/codemirror/CodeMirror.git plugins/codemirror/codemirror
+3. cd into plugins/codemirror/codemirror
+4. run command: sudo npm install
+5. run command: npm run-script prepublish
+
 Installation
 ------------
 
@@ -61,7 +73,7 @@ in full screen mode.
 (outside TinyMCE). In that case, you can reuse that CodeMirror instance, by
 overriding the default path. For example:
 
-    path: 'http://www.mysite.com/tools/codemirror-4.8'
+    path: 'http://www.mysite.com/tools/codemirror-x.y'
 
 **config**: Object CodeMirror configuration object, which is passed on to the
 CodeMirror instance. Check http://codemirror.net/doc/manual.html for available
@@ -143,7 +155,8 @@ Changelog
 
 Version 1.5.1 - 2017-01-20
 - FIX: "main" path for codemirror plugin
-- IMP: Readme
+- IMP: add codemirror as submodule
+- IMP: Update Readme
 
 Version 1.5 - 2016-09-14
 - Bugfix: Cursor position inside JS, style or &nbps; #2
