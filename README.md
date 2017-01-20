@@ -55,6 +55,8 @@ in full screen mode.
 
 **height**: int (550) Codemirror window height
 
+**saveCursorPosition**: boolean (true) Insert caret marker
+
 **path**: string (codemirror) You might already have CodeMirror hosted elsewhere
 (outside TinyMCE). In that case, you can reuse that CodeMirror instance, by
 overriding the default path. For example:
@@ -108,6 +110,7 @@ tinymce.init({
     },
     width: 800,         // Default value is 800
     height: 600,        // Default value is 550
+    saveCursorPosition: true    // Insert caret marker
     jsFiles: [          // Additional JS files to load
        'mode/clike/clike.js',
        'mode/php/php.js'
@@ -137,6 +140,10 @@ This will generate the subfolder `node_modules` inside codemirror.
 
 Changelog
 ---------
+
+Version 1.5.1 - 2017-01-20
+- FIX: "main" path for codemirror plugin
+- IMP: Readme
 
 Version 1.5 - 2016-09-14
 - Bugfix: Cursor position inside JS, style or &nbps; #2

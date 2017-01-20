@@ -1,8 +1,8 @@
 {
   "name": "tinymce-codemirror",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "CodeMirror for TinyMCE 4",
-  "main": "plugins/plugin.js",
+  "main": "plugins/codemirror/plugin.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/christiaan/tinymce-codemirror.git"
