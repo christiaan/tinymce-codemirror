@@ -141,14 +141,11 @@ CodeMirror itself does not work in these versions.
 
 Contributing
 ------------
+Run `npm install` in the project folder to install the development dependencies.
+
 When making changes to `plugins/codemirror/plugin.js`, be sure to run
 `npm run prepublish` before committing. The `prepublish` script will generate
 the `plugins/codemirror/plugin.min.js` file.
-
-To run `npm run prepublish` you need uglify-js. Run following command inside your codemirror folder to get the needed files:
-`sudo npm install uglify-js`
-
-This will generate the subfolder `node_modules` inside codemirror.
 
 Changelog
 ---------
