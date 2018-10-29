@@ -40,6 +40,7 @@ tinymce.PluginManager.add('codemirror', function(editor, url) {
 			resizable : true,
 			maximizable : true,
 			fullScreen: editor.settings.codemirror.fullscreen,
+      saveCursorPosition: false,
 			buttons: [
 				{ text: 'Ok', subtype: 'primary', onclick: function(){
 					var doc = document.querySelectorAll('.mce-container-body>iframe')[0];
