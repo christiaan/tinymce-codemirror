@@ -122,7 +122,7 @@ tinymce.init({
     },
     width: 800,         // Default value is 800
     height: 600,        // Default value is 550
-    saveCursorPosition: true    // Insert caret marker
+    saveCursorPosition: true,    // Insert caret marker
     jsFiles: [          // Additional JS files to load
        'mode/clike/clike.js',
        'mode/php/php.js'
