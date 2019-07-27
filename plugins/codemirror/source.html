@@ -35,7 +35,8 @@ function inArray(key, arr)
     var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : {};
     CMsettings = {
 		path: userSettings.path || 'codemirror-4.8',
-		indentOnInit: userSettings.indentOnInit || false,
+    indentOnInit: userSettings.indentOnInit || false,
+    disableFilesMerge: userSettings.disableFilesMerge || false,
 		config: {// Default config
 			mode: 'htmlmixed',
 			theme: 'default',
@@ -45,7 +46,7 @@ function inArray(key, arr)
 			tabSize: 2,
 			indentWithTabs: true,
 			matchBrackets: true,
-            saveCursorPosition: true,
+      saveCursorPosition: true,
 			styleActiveLine: true
 		},
 		jsFiles: [// Default JS files
@@ -71,10 +72,28 @@ function inArray(key, arr)
 		CMsettings.cssFiles.push('addon/display/fullscreen.css');
 	}
 
-	// Merge config
-	for (i in userSettings.config) {
-		CMsettings.config[i] = userSettings.config[i];
-	}
+  if (CMsettings.disableFilesMerge) {
+    if (
+      Array.isArray(userSettings.jsFiles) &&
+      Array.isArray(userSettings.cssFiles) &&
+      (userSettings.jsFiles.length > 0) &&
+      (userSettings.cssFiles.length > 0)
+    ) {
+      CMsettings.jsFiles = []
+      CMsettings.cssFiles = []
+    } else {
+      if (console) {
+        console.error('Codemirror plugin: jsFiles and cssFiles must be specified if disableFilesMerge is set to true')
+        console.warn('Codemirror plugin: ignoring disableFilesMerge')
+      }
+    }
+  }
+
+  // Merge config
+  for (i in userSettings.config) {
+    CMsettings.config[i] = userSettings.config[i];
+  }
+
 
 	// Merge jsFiles
 	for (i in userSettings.jsFiles) {

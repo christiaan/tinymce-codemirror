@@ -32,7 +32,7 @@ If you don't have codemirror, you need to add it as submodule like this:
 Installation
 ------------
 
-1. Download and install TinyMCE 4 and make sure it runs correctly with default settings.
+1. Download and install TinyMCE 4 or TinyMCE 5 (>= 5.0.4) and make sure it runs correctly with default settings.
 2. Download this repository found at https://github.com/christiaan/tinymce-codemirror
 3. Place the directory `plugins/codemirror` in the `tinymce/plugins` directory.
 4. Download CodeMirror (version 4 or later) from http://codemirror.net/codemirror-latest.zip.
@@ -78,6 +78,19 @@ overriding the default path. For example:
 **config**: Object CodeMirror configuration object, which is passed on to the
 CodeMirror instance. Check http://codemirror.net/doc/manual.html for available
 configuration options.
+
+**disableFilesMerge**: When set to true, disables default set of jsFiles and cssFiles.
+This is usable when you have custom prebuilt codemirror, that can be passed to
+jsFiles and cssFiles. For example:
+
+    path: '/assets/js/codemirror/',
+    disableFilesMerge: true,
+    jsFiles: [
+       'codemirror.custom.min.js'
+    ],
+    cssFiles: [
+       'codemirror.custom.min.css'
+    ]
 
 **jsFiles**: Array Array of CodeMirror Javascript files you want to
 (additionally) load. For example:
