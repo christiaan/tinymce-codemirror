@@ -1,5 +1,5 @@
-CodeMirror for TinyMCE4
-=======================
+CodeMirror for TinyMCE5 and 4
+=============================
 
 The [TinyMCE][] wysiwyg editor comes with a very basic HTML source editor.This
 plugin for TinyMCE makes editing HTML source code a more pleasant experience. It
