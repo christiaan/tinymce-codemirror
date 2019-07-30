@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TINYMCE 5 Test</title>
+</head>
+<body>
+<p><textarea id="html" style="width: 100%; height: 200px;" cols="60" rows="10">&lt;h1&gt;TinyMCE 5 with CodeMirror plugin&lt;/h1&gt;&lt;p&gt;Click the &lt;strong&gt;&amp;lt;&amp;gt;&lt;/strong&gt; button in the toolbar, or &lt;strong&gt;Tools -&amp;gt; Source Code&lt;/strong&gt; to edit the HTML code of this document.&lt;br&gt;Note that the cursor position is maintained when you switch from WYSIWYG to HTML source, and vice versa.&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/tinymce/tinymce-logo.png&quot; align=&quot;left&quot; /&gt; &lt;img src=&quot;/tinymce/codemirror-logo.png&quot; align=&quot;right&quot; /&gt;&lt;/p&gt;</textarea></p>
+<p><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.4/tinymce.min.js"></script><br />
+<script type="text/javascript">
+tinymce.init({
+  selector: '#html',
+  height: 200,
+  plugins: 'codemirror',
+  external_plugins: {
+    codemirror: "/plugins/codemirror/plugin.js"
+  },
+  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
+  codemirror: {
+    indentOnInit: true,
+    path: '/plugins/codemirror/codemirror-4.8',
+    config: {
+      lineNumbers: true
+    }
+  }
+});
+</script></p>
+</body>
+</html>
