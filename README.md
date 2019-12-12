@@ -1,7 +1,8 @@
 CodeMirror for TinyMCE5 and 4
 =============================
 
-**Pull requests to the original repository are ignored by the author, so I will continue to update this repo.**
+Notice: This repository is archived, development has been moved over to https://gitlab.com/tinymce-plugins/tinymce-codemirror
+
 
 The [TinyMCE][] wysiwyg editor comes with a very basic HTML source editor.This
 plugin for TinyMCE makes editing HTML source code a more pleasant experience. It
